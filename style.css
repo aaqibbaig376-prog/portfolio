@@ -1,0 +1,26 @@
+/* Color parameters layout root aliases */
+:root {
+  --brand-red: #DC2626;
+  --brand-dark: #0B0F19;
+  --brand-card: #1E293B;
+  --brand-silver: #94A3B8;
+  --light-bg: #F8FAFC;
+  --light-card: #FFFFFF;
+  --light-border: #E2E8F0;
+}
+
+/* Fallback utilities mapping compatibility rules */
+.bg-brand-dark { background-color: var(--brand-dark); }
+.bg-light-bg { background-color: var(--light-bg); }
+.bg-light-card { background-color: var(--light-card); }
+.bg-brand-card { background-color: var(--brand-card); }
+.text-brand-red { color: var(--brand-red); }
+.text-brand-silver { color: var(--brand-silver); }
+.border-light-border { border-color: var(--light-border); }
+.bg-brand-red { background-color: var(--brand-red); }
+
+/* Smooth canvas scaling parameters */
+img {
+  max-width: 100%;
+  height: auto;
+}

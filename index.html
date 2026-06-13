@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mirza Aaqib Baig | Portfolio</title>
+    
+    <!-- Tailwind CSS CDN Engine -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Configuration: Forces CDN compiler to read manual class injections -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class'
+        }
+    </script>
+
+    <!-- FontAwesome Vector Graphics Pack -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom Stylesheet link -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-slate-50 text-slate-900 dark:bg-[#0B0F19] dark:text-gray-100 font-sans scroll-smooth transition-colors duration-300">
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 bg-white/90 dark:bg-[#0B0F19]/90 backdrop-blur-md border-b border-slate-200 dark:border-gray-800 transition-colors duration-300">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <a href="#" class="text-xl font-bold tracking-wider text-slate-900 dark:text-white">
+                MAB<span class="text-red-600"> </span>
+            </a>
+            
+            <div class="flex items-center space-x-4 md:space-x-8">
+                <nav class="hidden md:flex space-x-8 text-sm font-medium text-slate-600 dark:text-slate-400">
+                    <a href="#about" class="hover:text-red-600 dark:hover:text-white transition-colors">About</a>
+                    <a href="#skills" class="hover:text-red-600 dark:hover:text-white transition-colors">Skills</a>
+                    <a href="#certifications" class="hover:text-red-600 dark:hover:text-white transition-colors">Certifications</a>
+                    <a href="#education" class="hover:text-red-600 dark:hover:text-white transition-colors">Education</a>
+                    <a href="#contact" class="hover:text-red-600 dark:hover:text-white transition-colors">Contact</a>
+                </nav>
+
+                <!-- Light / Dark Mode Toggle Button -->
+                <button id="theme-toggle" class="text-slate-700 dark:text-slate-400 hover:text-red-600 dark:hover:text-white transition-colors p-2 rounded-lg bg-slate-200 dark:bg-gray-800 focus:outline-none" aria-label="Toggle Theme">
+                    <i id="theme-icon" class="fa-solid fa-sun text-lg"></i>
+                </button>
+
+                <!-- Mobile Navigation Trigger -->
+                <div class="md:hidden">
+                    <button id="menu-btn" class="text-slate-700 dark:text-gray-400 hover:text-red-600 dark:hover:text-white focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Dropdown Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-[#0B0F19] border-b border-slate-200 dark:border-gray-800 px-4 pt-2 pb-4 space-y-2">
+            <a href="#about" class="block text-slate-600 dark:text-slate-400 hover:text-red-600 dark:hover:text-white py-2">About</a>
+            <a href="#skills" class="block text-slate-600 dark:text-slate-400 hover:text-red-600 dark:hover:text-white py-2">Skills</a>
+            <a href="#certifications" class="block text-slate-600 dark:text-slate-400 hover:text-red-600 dark:hover:text-white py-2">Certifications</a>
+            <a href="#education" class="block text-slate-600 dark:text-slate-400 hover:text-red-600 dark:hover:text-white py-2">Education</a>
+            <a href="#contact" class="block text-slate-600 dark:text-slate-400 hover:text-red-600 dark:hover:text-white py-2">Contact</a>
+        </div>
+    </header>
+
+    <!-- Hero Introduction Header Frame -->
+    <section class="relative min-h-[85vh] flex items-center justify-center py-20 overflow-hidden">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(220,38,38,0.06),transparent_50%)]"></div>
+        <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
+            <span id="hero-tagline" class="text-red-600 font-semibold tracking-widest uppercase text-sm bg-red-600/10 px-3 py-1 rounded-full"></span>
+            <h1 class="text-4xl sm:text-6xl font-extrabold text-slate-900 dark:text-white mt-4 mb-6 tracking-tight">
+                Hi, I'm <span id="hero-name" class="text-transparent bg-clip-text bg-gradient-to-r from-slate-900 to-red-600 dark:from-white dark:to-red-500"></span>
+            </h1>
+            <p id="hero-summary" class="text-lg sm:text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto mb-8 leading-relaxed"></p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#contact" class="bg-red-600 hover:bg-red-700 text-white font-medium px-6 py-3 rounded-lg transition-all shadow-lg shadow-red-600/20">
+                    Get In Touch
+                </a>
+                <a id="hero-linkedin" href="#" target="_blank" class="bg-transparent border border-slate-300 dark:border-gray-700 hover:border-slate-400 dark:hover:border-slate-400 text-slate-800 dark:text-white font-medium px-6 py-3 rounded-lg transition-all flex items-center gap-2">
+                    <i class="fa-brands fa-linkedin"></i> LinkedIn
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-slate-100 dark:bg-slate-900/40 border-t border-b border-slate-200 dark:border-gray-900">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-2 flex items-center gap-3">
+                <span class="w-8 h-1 bg-red-600 rounded"></span> Professional Summary
+            </h2>
+            <p id="about-text" class="text-slate-600 dark:text-slate-400 mt-6 text-lg leading-relaxed"></p>
+        </div>
+    </section>
+
+    <!-- Toolkit Display Grid Section -->
+    <section id="skills" class="py-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-10 flex items-center gap-3">
+                <span class="w-8 h-1 bg-red-600 rounded"></span> Technical Toolkit
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white dark:bg-[#1E293B] p-6 rounded-xl border border-slate-200 dark:border-gray-800 shadow-sm">
+                    <h3 class="text-slate-900 dark:text-white font-semibold text-lg mb-3">Programming & Web</h3>
+                    <div id="skills-prog-container" class="flex flex-wrap gap-2"></div>
+                </div>
+                <div class="bg-white dark:bg-[#1E293B] p-6 rounded-xl border border-slate-200 dark:border-gray-800 shadow-sm">
+                    <h3 class="text-slate-900 dark:text-white font-semibold text-lg mb-3">Platforms & Tools</h3>
+                    <div id="skills-platform-container" class="flex flex-wrap gap-2"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications List Container Section -->
+    <section id="certifications" class="py-20 bg-slate-100 dark:bg-slate-900/40 border-t border-b border-slate-200 dark:border-gray-900">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-10 flex items-center gap-3">
+                <span class="w-8 h-1 bg-red-600 rounded"></span> Industry Credentials
+            </h2>
+            <div id="certs-container" class="grid grid-cols-1 sm:grid-cols-2 gap-4"></div>
+        </div>
+    </section>
+
+    <!-- Educational Progress Tracks Timeline -->
+    <section id="education" class="py-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-12 flex items-center gap-3">
+                <span class="w-8 h-1 bg-red-600 rounded"></span> Educational Timeline
+            </h2>
+            <div id="education-timeline" class="space-y-8 relative before:absolute before:inset-0 before:left-4 before:w-0.5 before:bg-slate-300 dark:before:bg-gray-800"></div>
+        </div>
+    </section>
+
+    <!-- Interactive Overlay Modal Container Frame -->
+    <div id="cert-modal" class="fixed inset-0 z-50 invisible opacity-0 bg-slate-900/80 dark:bg-[#0B0F19]/95 backdrop-blur-sm flex items-center justify-center p-4 transition-all duration-300">
+        <div class="bg-white dark:bg-[#1E293B] border border-slate-200 dark:border-gray-800 w-full max-w-3xl rounded-2xl p-6 relative shadow-2xl scale-95 transition-transform duration-300" id="modal-content">
+            <button id="modal-close-btn" class="absolute top-4 right-4 text-slate-500 dark:text-slate-400 hover:text-slate-950 dark:hover:text-white bg-slate-100 dark:bg-gray-800 w-8 h-8 rounded-full flex items-center justify-center">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h3 id="modal-title" class="text-xl font-bold text-slate-900 dark:text-white mb-4 pr-10 truncate"></h3>
+            <div class="w-full h-[55vh] bg-slate-100 dark:bg-[#0B0F19]/60 rounded-xl overflow-hidden border border-slate-200 dark:border-gray-900 flex items-center justify-center">
+                <img id="modal-img" src="" alt="Certificate" class="max-w-full max-h-full object-contain hidden">
+                <div id="modal-placeholder" class="text-center p-6 text-sm text-slate-500 dark:text-slate-400">
+                    <i class="fa-solid fa-file-image text-4xl text-red-600/40 mb-3 block"></i> No document uploaded.
+                </div>
+            </div>
+            <div class="flex justify-between items-center mt-4 pt-4 border-t border-slate-200 dark:border-gray-800">
+                <span class="text-xs text-slate-500 dark:text-slate-400">Verification Active</span>
+                <a id="modal-download" href="" download class="bg-red-600 hover:bg-red-700 text-white text-xs font-semibold px-4 py-2 rounded-lg transition-colors">
+                    Download File
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Communications Link Footer -->
+    <footer id="contact" class="py-16 bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-gray-900 text-center">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-4">Let's Connect</h2>
+            <div class="flex flex-wrap justify-center gap-6 text-sm mb-10">
+                <a id="contact-email" href="#" class="bg-white dark:bg-[#1E293B] px-4 py-2.5 rounded-lg border border-slate-200 dark:border-gray-800 text-slate-600 dark:text-slate-400">
+                    <i class="fa-solid fa-envelope text-red-600"></i> <span id="text-email"></span>
+                </a>
+                <a id="contact-phone" href="#" class="bg-white dark:bg-[#1E293B] px-4 py-2.5 rounded-lg border border-slate-200 dark:border-gray-800 text-slate-600 dark:text-slate-400">
+                    <i class="fa-solid fa-phone text-red-600"></i> <span id="text-phone"></span>
+                </a>
+            </div>
+            <p class="text-xs text-slate-400">&copy; 2026 <span id="footer-name"></span>. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
