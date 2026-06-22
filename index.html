@@ -1,174 +1,245 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mirza Aaqib Baig | Portfolio</title>
-    
-    <!-- Tailwind CSS CDN Engine -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Tailwind Configuration: Forces CDN compiler to read manual class injections -->
-    <script>
-        tailwind.config = {
-            darkMode: 'class'
-        }
-    </script>
-
-    <!-- FontAwesome Vector Graphics Pack -->
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Custom Stylesheet link -->
+    <!-- Custom Stylesheet -->
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-slate-50 text-slate-900 dark:bg-[#0B0F19] dark:text-gray-100 font-sans scroll-smooth transition-colors duration-300">
+<body>
 
-    <!-- Navigation Header -->
-    <header class="sticky top-0 z-50 bg-white/90 dark:bg-[#0B0F19]/90 backdrop-blur-md border-b border-slate-200 dark:border-gray-800 transition-colors duration-300">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            <a href="#" class="text-xl font-bold tracking-wider text-slate-900 dark:text-white">
-                MAB<span class="text-red-600"> </span>
-            </a>
-            
-            <div class="flex items-center space-x-4 md:space-x-8">
-                <nav class="hidden md:flex space-x-8 text-sm font-medium text-slate-600 dark:text-slate-400">
-                    <a href="#about" class="hover:text-red-600 dark:hover:text-white transition-colors">About</a>
-                    <a href="#skills" class="hover:text-red-600 dark:hover:text-white transition-colors">Skills</a>
-                    <a href="#certifications" class="hover:text-red-600 dark:hover:text-white transition-colors">Certifications</a>
-                    <a href="#education" class="hover:text-red-600 dark:hover:text-white transition-colors">Education</a>
-                    <a href="#contact" class="hover:text-red-600 dark:hover:text-white transition-colors">Contact</a>
-                </nav>
-
-                <!-- Light / Dark Mode Toggle Button -->
-                <button id="theme-toggle" class="text-slate-700 dark:text-slate-400 hover:text-red-600 dark:hover:text-white transition-colors p-2 rounded-lg bg-slate-200 dark:bg-gray-800 focus:outline-none" aria-label="Toggle Theme">
-                    <i id="theme-icon" class="fa-solid fa-sun text-lg"></i>
-                </button>
-
-                <!-- Mobile Navigation Trigger -->
-                <div class="md:hidden">
-                    <button id="menu-btn" class="text-slate-700 dark:text-gray-400 hover:text-red-600 dark:hover:text-white focus:outline-none">
-                        <i class="fa-solid fa-bars text-xl"></i>
-                    </button>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">MAB</a>
+            <div class="nav-right-group">
+                <div class="nav-links">
+                    <a href="#skills" class="nav-link">Skills</a>
+                    <a href="#certifications" class="nav-link">Certifications</a>
+                    <a href="#education" class="nav-link">Education</a>
+                    <a href="#contact" class="nav-link">Contact</a>
                 </div>
+                <!-- Interactive Theme Switcher Button -->
+                <button id="theme-toggle" class="theme-btn" aria-label="Toggle dark/light theme">
+                    <i class="fa-solid fa-sun"></i>
+                </button>
             </div>
         </div>
-        
-        <!-- Mobile Dropdown Navigation Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-[#0B0F19] border-b border-slate-200 dark:border-gray-800 px-4 pt-2 pb-4 space-y-2">
-            <a href="#about" class="block text-slate-600 dark:text-slate-400 hover:text-red-600 dark:hover:text-white py-2">About</a>
-            <a href="#skills" class="block text-slate-600 dark:text-slate-400 hover:text-red-600 dark:hover:text-white py-2">Skills</a>
-            <a href="#certifications" class="block text-slate-600 dark:text-slate-400 hover:text-red-600 dark:hover:text-white py-2">Certifications</a>
-            <a href="#education" class="block text-slate-600 dark:text-slate-400 hover:text-red-600 dark:hover:text-white py-2">Education</a>
-            <a href="#contact" class="block text-slate-600 dark:text-slate-400 hover:text-red-600 dark:hover:text-white py-2">Contact</a>
+    </nav>
+
+    <!-- Hero Showcase Header Section -->
+    <header class="hero-section">
+        <div class="hero-container">
+            <div class="hero-badge">AVAILABLE FOR OPPORTUNITIES</div>
+            <h1 class="hero-title">Hi, I'm <span>Mirza Aaqib Baig</span></h1>
+            <p class="hero-subtitle">A Computer Science & Engineering undergraduate with strong technical foundations and multiple certifications across ServiceNow platforms, Python Full Stack, and Java programming.</p>
+            
+            <!-- Interactive Buttons Group -->
+            <div id="hero-actions-group" class="hero-actions">
+                <button id="open-form-btn" class="btn-primary">Get In Touch</button>
+                <a href="https://github.com/aaqibbaig376-prog" target="_blank" class="btn-secondary"><i class="fa-brands fa-github"></i> GitHub</a>
+                <a href="https://linkedin.com/in/mirza-aaqib-baig-aba403348" target="_blank" class="btn-secondary"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+            </div>
+
+            <!-- INLINE CONTACT FORM (Hidden by default, loads right here when clicked) -->
+            <div id="inline-contact-form" class="inline-form-container">
+                <div class="inline-form-header">
+                    <h3>Send a Message Directly</h3>
+                    <button id="close-form-btn" class="inline-close-btn" aria-label="Cancel">&times;</button>
+                </div>
+                <!-- Note: Replace 'YOUR_FORMSPREE_ENDPOINT_ID' with your Formspree endpoint ID string -->
+                <form action="mailto:aaqibbaig376@gmail.com" method="POST" enctype="text/plain" class="contact-form">                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="user-name">Full Name</label>
+                            <input type="text" id="user-name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="user-email">Email Address</label>
+                            <input type="email" id="user-email" name="_replyto" placeholder="yourname@example.com" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="user-msg">Message</label>
+                        <textarea id="user-msg" name="message" rows="4" placeholder="Let's discuss a project or opportunity..." required></textarea>
+                    </div>
+                    <input type="text" name="_gotcha" style="display:none">
+                    <button type="submit" class="btn-primary submit-btn">Send Message</button>
+                </form>
+            </div>
+
         </div>
     </header>
 
-    <!-- Hero Introduction Header Frame -->
-    <section class="relative min-h-[85vh] flex items-center justify-center py-20 overflow-hidden">
-        <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(220,38,38,0.06),transparent_50%)]"></div>
-        <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
-            <span id="hero-tagline" class="text-red-600 font-semibold tracking-widest uppercase text-sm bg-red-600/10 px-3 py-1 rounded-full"></span>
-            <h1 class="text-4xl sm:text-6xl font-extrabold text-slate-900 dark:text-white mt-4 mb-6 tracking-tight">
-                Hi, I'm <span id="hero-name" class="text-transparent bg-clip-text bg-gradient-to-r from-slate-900 to-red-600 dark:from-white dark:to-red-500"></span>
-            </h1>
-            <p id="hero-summary" class="text-lg sm:text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto mb-8 leading-relaxed"></p>
-            <div class="flex flex-wrap justify-center gap-4">
-                <a href="#contact" class="bg-red-600 hover:bg-red-700 text-white font-medium px-6 py-3 rounded-lg transition-all shadow-lg shadow-red-600/20">
-                    Get In Touch
-                </a>
-                <a id="hero-linkedin" href="#" target="_blank" class="bg-transparent border border-slate-300 dark:border-gray-700 hover:border-slate-400 dark:hover:border-slate-400 text-slate-800 dark:text-white font-medium px-6 py-3 rounded-lg transition-all flex items-center gap-2">
-                    <i class="fa-brands fa-linkedin"></i> LinkedIn
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="py-20 bg-slate-100 dark:bg-slate-900/40 border-t border-b border-slate-200 dark:border-gray-900">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6">
-            <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-2 flex items-center gap-3">
-                <span class="w-8 h-1 bg-red-600 rounded"></span> Professional Summary
-            </h2>
-            <p id="about-text" class="text-slate-600 dark:text-slate-400 mt-6 text-lg leading-relaxed"></p>
-        </div>
-    </section>
-
-    <!-- Toolkit Display Grid Section -->
-    <section id="skills" class="py-20">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6">
-            <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-10 flex items-center gap-3">
-                <span class="w-8 h-1 bg-red-600 rounded"></span> Technical Toolkit
-            </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="bg-white dark:bg-[#1E293B] p-6 rounded-xl border border-slate-200 dark:border-gray-800 shadow-sm">
-                    <h3 class="text-slate-900 dark:text-white font-semibold text-lg mb-3">Programming & Web</h3>
-                    <div id="skills-prog-container" class="flex flex-wrap gap-2"></div>
+    <!-- Technical Toolkit Skills Section -->
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <h2 class="section-heading">Technical Toolkit</h2>
+            <div class="skills-grid">
+                
+                <!-- Skill Category 1 -->
+                <div class="skills-card">
+                    <h3>Programming & Web</h3>
+                    <div class="pills-container">
+                        <span class="skill-pill">Java</span>
+                        <span class="skill-pill">Python</span>
+                        <span class="skill-pill">C Language</span>
+                        <span class="skill-pill">HTML5</span>
+                        <span class="skill-pill">CSS3</span>
+                        <span class="skill-pill">JavaScript</span>
+                    </div>
                 </div>
-                <div class="bg-white dark:bg-[#1E293B] p-6 rounded-xl border border-slate-200 dark:border-gray-800 shadow-sm">
-                    <h3 class="text-slate-900 dark:text-white font-semibold text-lg mb-3">Platforms & Tools</h3>
-                    <div id="skills-platform-container" class="flex flex-wrap gap-2"></div>
+
+                <!-- Skill Category 2 -->
+                <div class="skills-card">
+                    <h3>Platforms & Tools</h3>
+                    <div class="pills-container">
+                        <span class="skill-pill">ServiceNow Platforms</span>
+                        <span class="skill-pill">Git / GitHub</span>
+                        <span class="skill-pill">Object-Oriented Programming (OOPs)</span>
+                        <span class="skill-pill">Software Engineering Principles</span>
+                    </div>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <!-- Certifications List Container Section -->
-    <section id="certifications" class="py-20 bg-slate-100 dark:bg-slate-900/40 border-t border-b border-slate-200 dark:border-gray-900">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6">
-            <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-10 flex items-center gap-3">
-                <span class="w-8 h-1 bg-red-600 rounded"></span> Industry Credentials
-            </h2>
-            <div id="certs-container" class="grid grid-cols-1 sm:grid-cols-2 gap-4"></div>
-        </div>
-    </section>
-
-    <!-- Educational Progress Tracks Timeline -->
-    <section id="education" class="py-20">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6">
-            <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-12 flex items-center gap-3">
-                <span class="w-8 h-1 bg-red-600 rounded"></span> Educational Timeline
-            </h2>
-            <div id="education-timeline" class="space-y-8 relative before:absolute before:inset-0 before:left-4 before:w-0.5 before:bg-slate-300 dark:before:bg-gray-800"></div>
-        </div>
-    </section>
-
-    <!-- Interactive Overlay Modal Container Frame -->
-    <div id="cert-modal" class="fixed inset-0 z-50 invisible opacity-0 bg-slate-900/80 dark:bg-[#0B0F19]/95 backdrop-blur-sm flex items-center justify-center p-4 transition-all duration-300">
-        <div class="bg-white dark:bg-[#1E293B] border border-slate-200 dark:border-gray-800 w-full max-w-3xl rounded-2xl p-6 relative shadow-2xl scale-95 transition-transform duration-300" id="modal-content">
-            <button id="modal-close-btn" class="absolute top-4 right-4 text-slate-500 dark:text-slate-400 hover:text-slate-950 dark:hover:text-white bg-slate-100 dark:bg-gray-800 w-8 h-8 rounded-full flex items-center justify-center">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-            <h3 id="modal-title" class="text-xl font-bold text-slate-900 dark:text-white mb-4 pr-10 truncate"></h3>
-            <div class="w-full h-[55vh] bg-slate-100 dark:bg-[#0B0F19]/60 rounded-xl overflow-hidden border border-slate-200 dark:border-gray-900 flex items-center justify-center">
-                <img id="modal-img" src="" alt="Certificate" class="max-w-full max-h-full object-contain hidden">
-                <div id="modal-placeholder" class="text-center p-6 text-sm text-slate-500 dark:text-slate-400">
-                    <i class="fa-solid fa-file-image text-4xl text-red-600/40 mb-3 block"></i> No document uploaded.
+    <!-- Industry Credentials Section -->
+    <section id="certifications" class="certifications-section">
+        <div class="container">
+            <h2 class="section-heading">Industry Credentials</h2>
+            <div class="cert-grid">
+                
+                <!-- Cert 1: ServiceNow -->
+                <div class="cert-card">
+                    <div class="cert-icon"><i class="fa-solid fa-certificate"></i></div>
+                    <div class="cert-info">
+                        <h3>Welcome to ServiceNow Micro-Certification</h3>
+                        <p class="issuer">Issued by ServiceNow</p>
+                        <button class="view-link cert-trigger-btn" data-cert="certs/servicenow.jpg">
+                            <i class="fa-solid fa-eye"></i> View Credential
+                        </button>
+                    </div>
                 </div>
-            </div>
-            <div class="flex justify-between items-center mt-4 pt-4 border-t border-slate-200 dark:border-gray-800">
-                <span class="text-xs text-slate-500 dark:text-slate-400">Verification Active</span>
-                <a id="modal-download" href="" download class="bg-red-600 hover:bg-red-700 text-white text-xs font-semibold px-4 py-2 rounded-lg transition-colors">
-                    Download File
-                </a>
+
+                <!-- Cert 2: Java CodeTantra -->
+                <div class="cert-card">
+                    <div class="cert-icon"><i class="fa-solid fa-certificate"></i></div>
+                    <div class="cert-info">
+                        <h3>Java Programming Certificate</h3>
+                        <p class="issuer">CodeTantra • Core Fundamentals</p>
+                        <button class="view-link cert-trigger-btn" data-cert="certs/java.jpg">
+                            <i class="fa-solid fa-eye"></i> View Credential
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Cert 3: HTML PrepInsta -->
+                <div class="cert-card">
+                    <div class="cert-icon"><i class="fa-solid fa-certificate"></i></div>
+                    <div class="cert-info">
+                        <h3 class="highlight-title">HTML NanoDegree Certification</h3>
+                        <p class="issuer">PrepInsta • Advanced Layouts</p>
+                        <button class="view-link cert-trigger-btn" data-cert="certs/html.jpg">
+                            <i class="fa-solid fa-eye"></i> View Credential
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Cert 4: EF SET English -->
+                <div class="cert-card">
+                    <div class="cert-icon"><i class="fa-solid fa-certificate"></i></div>
+                    <div class="cert-info">
+                        <h3>EF SET English Certificate</h3>
+                        <p class="issuer">Score: 62/100 • Verified C1 Advanced</p>
+                        <button class="view-link cert-trigger-btn" data-cert="certs/english.jpg">
+                            <i class="fa-solid fa-eye"></i> View Credential
+                        </button>
+                    </div>
+                </div>
+
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- Communications Link Footer -->
-    <footer id="contact" class="py-16 bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-gray-900 text-center">
-        <div class="max-w-4xl mx-auto px-4">
-            <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-4">Let's Connect</h2>
-            <div class="flex flex-wrap justify-center gap-6 text-sm mb-10">
-                <a id="contact-email" href="#" class="bg-white dark:bg-[#1E293B] px-4 py-2.5 rounded-lg border border-slate-200 dark:border-gray-800 text-slate-600 dark:text-slate-400">
-                    <i class="fa-solid fa-envelope text-red-600"></i> <span id="text-email"></span>
+    <!-- Educational Journey Timeline Section -->
+    <section id="education" class="education-section">
+        <div class="container">
+            <h2 class="section-heading">Educational Timeline</h2>
+            <div class="timeline">
+                
+                <!-- Timeline Entry 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot active"></div>
+                    <div class="timeline-header">
+                        <h3>Bachelor Of Technology — Computer Science and Engineering</h3>
+                        <span class="timeline-date active">2023 - 2027</span>
+                    </div>
+                    <p class="sub-institution">G.Pullaiah College Of Engineering and Technology, Kurnool (6th Semester)</p>
+                </div>
+
+                <!-- Timeline Entry 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-header">
+                        <h3>Board Of Intermediate Education</h3>
+                        <span class="timeline-date">2021 - 2023</span>
+                    </div>
+                    <p class="sub-institution">Narayana Jr College, Kurnool</p>
+                </div>
+
+                <!-- Timeline Entry 3 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-header">
+                        <h3>Board Of Secondary Education (SSC)</h3>
+                        <span class="timeline-date">2020 - 2021</span>
+                    </div>
+                    <p class="sub-institution">Montessori E.M High School, Kurnool</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Contact Footer Module -->
+    <footer id="contact" class="footer-section">
+        <div class="container footer-container">
+            <h2>Let's Connect</h2>
+            <div class="contact-buttons">
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=aaqibbaig376@gmail.com" target="_blank" class="contact-btn">
+                    <i class="fa-solid fa-envelope"></i> aaqibbaig376@gmail.com
                 </a>
-                <a id="contact-phone" href="#" class="bg-white dark:bg-[#1E293B] px-4 py-2.5 rounded-lg border border-slate-200 dark:border-gray-800 text-slate-600 dark:text-slate-400">
-                    <i class="fa-solid fa-phone text-red-600"></i> <span id="text-phone"></span>
+                <a href="https://github.com/aaqibbaig376-prog" target="_blank" class="contact-btn">
+                    <i class="fa-brands fa-github"></i> GitHub
+                </a>
+                <a href="https://linkedin.com/in/mirza-aaqib-baig-aba403348" target="_blank" class="contact-btn">
+                    <i class="fa-brands fa-linkedin-in"></i> LinkedIn
+                </a>
+                <a href="tel:+918309949511" class="contact-btn">
+                    <i class="fa-solid fa-phone"></i> +91 8309949511
                 </a>
             </div>
-            <p class="text-xs text-slate-400">&copy; 2026 <span id="footer-name"></span>. All rights reserved.</p>
+            <p class="copyright">&copy; 2026 Mirza Aaqib Baig. All rights reserved.</p>
         </div>
     </footer>
 
+    <!-- POP-UP PREVIEW PANEL FRAMEWORK FOR CERTIFICATES -->
+    <div id="cert-lightbox" class="lightbox-overlay">
+        <div class="lightbox-content-box">
+            <button id="close-lightbox-btn" class="lightbox-close-btn" aria-label="Close Preview">&times;</button>
+            <img id="lightbox-image" src="" alt="Certificate Preview Frame">
+        </div>
+    </div>
+
+    <!-- Custom Interaction Functionality Scripts -->
     <script src="script.js"></script>
 </body>
 </html>
